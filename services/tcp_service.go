@@ -86,12 +86,12 @@ func (s *TCPActor) readLoop(cn net.Conn) {
 			break
 		}
 		if err != nil {
-			log.Println("[ Read error ]:", err)
-			continue
+			log.Println("[ Read error ]:", err.Error())
+			break
 		}
 
 		msg := buf[:n]
-		log.Println(msg)
+		log.Println(string(msg))
 	}
 }
 
